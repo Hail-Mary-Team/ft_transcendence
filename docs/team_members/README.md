@@ -22,6 +22,8 @@ Follow the table of content below:
    - If you introduce a new tool, CLI, or setup step that teammates need (especially without `sudo` on 42 machines), add a guide in [`HOW_TO.md`](./HOW_TO.md) and mention it in your PR/commit.
    - When you build a feature, service, or module, add a clear explanation of how your code works inside `docs/team_members/project_documentation/<your_login>/` so teammates and evaluators can follow it easily.
 4. **Keep `infra/config.example.json` in sync when adding config keys.** Never put real passwords or secrets in `infra/config.example.json` use clear placeholders like `REPLACE_WITH_...` and generate your real values locally in your gitignored `config.json`.
+5. Link the pull request link to the Jira work item in the comment section.
+6. Anytime you add a change to the repository make a explaning in the documentation section labled with your login, so other members will understand what you did.
 
 ---
 
