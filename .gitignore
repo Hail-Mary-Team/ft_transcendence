@@ -1,0 +1,10 @@
+#build file & directories
+
+config.lua
+config.json
+build/
+
+
+#python cache files & directories
+*.pyc
+*__pycache__
