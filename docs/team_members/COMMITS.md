@@ -56,7 +56,7 @@ exposing it in plain environment variables.
 
 The scope tells everyone *which part* of the project you touched. Right now, our main scopes are:
 
-- `infra` — Lua generator (`setup.lua`), `config.example.lua`, Docker setup
+- `infra` — Python generator (`setup.py`), `config.example.json`, Docker setup
 - `db` — PostgreSQL setup, schemas, or migrations
 - `pav` — anything inside `core/pav/`
 - `docs` — documentation files
@@ -72,9 +72,9 @@ The scope tells everyone *which part* of the project you touched. Right now, our
 **Good:**
 
 ```text
-feat(infra): generate per-service envs and secrets from config.lua
+feat(infra): generate per-service envs and secrets from config.json
 fix(db): use POSTGRES_PASSWORD_FILE so postgres reads docker secret
-docs(howto): add no-sudo install steps for lua and just
+docs(howto): add no-sudo install steps for python, just, docker and docker compose.
 chore(tooling): add clean and check recipes to justfile
 ```
 
@@ -93,6 +93,6 @@ wip
 
 Vogsphere scans the **entire** Git history when we push, not just the latest commit. One bad commit today can block our push on evaluation day.
 
-- **Never commit secrets or generated files.** Make sure `config.lua`, `build/`, `.env`, and any password/API key files stay ignored.
+- **Never commit secrets or generated files.** Make sure `config.py`, `build/`, `.env`, and any password/API key files stay ignored.
 - **No heavy binaries or build junk.** Don't commit `node_modules/`, compiled files, or huge uncompressed assets.
-- **One logical change per commit.** Don't mix a Docker config change, a docs rewrite, and a backend bug fix into one giant commit — split them up so they're easy to review and revert if something breaks.
+- **One logical change per commit.** Don't mix a Docker config change, a docs rewrite, and a backend bug fix into one giant commit split them up so they're easy to review and revert if something breaks.
